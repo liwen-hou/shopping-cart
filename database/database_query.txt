@@ -1,5 +1,5 @@
 
-create database DBSHOP
+create database DBSHOP;
 
 create table tbl_u_country
 (
@@ -8,17 +8,17 @@ create table tbl_u_country
 
 	constraint tbl_s_country_pk primary key(country_code),
 	constraint tbl_s_country_u unique(country_name)
-)
+);
 
 create table tbl_s_systemuser
-(	
+(
 	username varchar(50) not null,
 	password varchar(50) not null,
 	user_level varchar(2) not null,
-	
+
 	constraint tbl_s_systemuser_pk primary key(username),
 	constraint tbl_s_systemuser_u unique(user_level)
-)
+);
 
 create table tbl_s_customer
 (
@@ -37,17 +37,8 @@ create table tbl_s_customer
 	constraint tbl_s_customer_fk foreign key(country_code)
 		references tbl_u_country(county_code),
 	constraint tbl_s_customer_u unique(email_address)
-)
+);
 
-create table tbl_u_category
-(
-	category_code varchar(5) not null,
-	category_description varchar(100) not null,
-	
-	constraint tbl_u_category_pk primary key(category_code),
-	constraint tbl_u_category_u unique(category_description)
-)
-		
 create table tbl_s_product
 (
 	product_code varchar(10) not null,
@@ -61,12 +52,12 @@ create table tbl_s_product
 	constraint tbl_s_product_fk foreign key(category_code)
 		references tbl_u_category(category_code),
 	constraint tbl_s_product_u unique(product_description),
-	constraint tbl_s_product_chk 
+	constraint tbl_s_product_chk
 		check(quantity >= 0 and
 		      price >= 0)
-)
+);
 
-	
+
 create table tbl_t_shop_header
 (
 	transaction_number varchar(10) not null,
@@ -81,7 +72,7 @@ create table tbl_t_shop_header
 		references tbl_s_customer(username),
 	constraint tbl_t_shop_header_chk
 		check(total_amount >= 0)
-)
+);
 
 create table tbl_t_shop_detail
 (
@@ -98,20 +89,15 @@ create table tbl_t_shop_detail
 	constraint tbl_t_shop_detail_chk
 		check(quantity >= 0 and
 			subtotal >= 0)
-	
-
-)
 
 
-sample value
+);
 
-tbl_s_systemuser
 
 	insert into tbl_s_systemuser values('ADMIN', 'admin', 'AD');
 	insert into tbl_s_systemuser values('temp', 'temp', 'LT');
 
-tbl_u_county_code
-		
+
 	insert into tbl_u_country values('CN101', 'ARMENIAN');
 	insert into tbl_u_country values('CN102', 'CANADA');
 	insert into tbl_u_country values('CN103', 'CHINA');
@@ -119,17 +105,12 @@ tbl_u_county_code
 	insert into tbl_u_country values('CN105', 'PHILIPPINES');
 	insert into tbl_u_country values('CN106', 'USA');
 
-tbl_s_product
-	
-	insert into tbl_s_product values('PRD1000001', 'PALA', 'CT101', '5', '100.00', "")	
+
+	insert into tbl_s_product values('PRD1000001', 'PALA', 'CT101', '5', '100.00', "")
 	insert into tbl_s_product values('PRD1000002', 'MARTILYO', 'CT101', '5', '200.00', "")
 	insert into tbl_s_product values('PRD1000003', 'MASO', 'CT101', '5', '300.00', "")
 	insert into tbl_s_product values('PRD1000004', 'SEMENTO', 'CT101', '5', '400.00', "")
-	insert into tbl_s_product values('PRD1000005', 'BALSIG', 'CT101', '5', '500.00', "")	
+	insert into tbl_s_product values('PRD1000005', 'BALSIG', 'CT101', '5', '500.00', "")
 
-tbl_u_category
-	
 	insert into tbl_u_category values('CT101', 'HEAVY');
 	insert into tbl_u_category values('CT102', 'LIGHT');
-	
-pg. 918..
