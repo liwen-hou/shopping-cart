@@ -1,0 +1,135 @@
+
+create database DBSHOP
+
+create table tbl_u_country
+(
+	country_code varchar(5) not null,
+	country_name varchar(100) not null,
+
+	constraint tbl_s_country_pk primary key(country_code),
+	constraint tbl_s_country_u unique(country_name)
+)
+
+create table tbl_s_systemuser
+(	
+	username varchar(50) not null,
+	password varchar(50) not null,
+	user_level varchar(2) not null,
+	
+	constraint tbl_s_systemuser_pk primary key(username),
+	constraint tbl_s_systemuser_u unique(user_level)
+)
+
+create table tbl_s_customer
+(
+	username varchar(50) not null,
+	customer_last_name varchar(100) not null,
+	customer_first_name varchar(100) not null,
+	customer_address varchar(200) not null,
+	country_code varchar(5) not null,
+	mobile_number numeric not null,
+	phone_number numeric not null,
+	email_address varchar(100) not null,
+
+	constraint tbl_s_customer_pk primary key(username),
+	constraint tbl_s_customer_fk_u foreign key(username)
+		references tbl_s_systemuser(username),
+	constraint tbl_s_customer_fk foreign key(country_code)
+		references tbl_u_country(county_code),
+	constraint tbl_s_customer_u unique(email_address)
+)
+
+create table tbl_u_category
+(
+	category_code varchar(5) not null,
+	category_description varchar(100) not null,
+	
+	constraint tbl_u_category_pk primary key(category_code),
+	constraint tbl_u_category_u unique(category_description)
+)
+		
+create table tbl_s_product
+(
+	product_code varchar(10) not null,
+	product_description varchar(100) not null,
+	category_code varchar(5) not null,
+	quantity numeric not null,
+	price decimal(9,2) not null,
+	image varchar(100),
+
+	constraint tbl_s_product_pk primary key(product_code),
+	constraint tbl_s_product_fk foreign key(category_code)
+		references tbl_u_category(category_code),
+	constraint tbl_s_product_u unique(product_description),
+	constraint tbl_s_product_chk 
+		check(quantity >= 0 and
+		      price >= 0)
+)
+
+	
+create table tbl_t_shop_header
+(
+	transaction_number varchar(10) not null,
+	shop_date datetime not null,
+	username varchar(50) not null,
+	shipping_address varchar(100) not null,
+	total_amount decimal(9,2) not null,
+	credit_card_number numeric not null,
+
+	constraint tbl_t_shop_header_pk primary key(transaction_number),
+	constraint tbl_t_shop_header_fk foreign key(username)
+		references tbl_s_customer(username),
+	constraint tbl_t_shop_header_chk
+		check(total_amount >= 0)
+)
+
+create table tbl_t_shop_detail
+(
+	transaction_number varchar(10) not null,
+	product_code varchar(10) not null,
+	quantity numeric not null,
+	subtotal decimal(9,2) not null,
+
+	constraint tbl_t_shop_detail_pk primary key(transaction_number, product_code),
+	constraint tbl_t_shop_detail_fk_tn foreign key(transaction_number)
+		references tbl_t_shop_header(transaction_number),
+	constraint tbl_t_shop_detail_fk_pc foreign key(product_code)
+		references tbl_s_product(product_code),
+	constraint tbl_t_shop_detail_chk
+		check(quantity >= 0 and
+			subtotal >= 0)
+	
+
+)
+
+
+sample value
+
+tbl_s_systemuser
+
+	insert into tbl_s_systemuser values('ADMIN', 'admin', 'AD');
+	insert into tbl_s_systemuser values('temp', 'temp', 'LT');
+
+tbl_u_county_code
+		
+	insert into tbl_u_country values('CN101', 'ARMENIAN');
+	insert into tbl_u_country values('CN102', 'CANADA');
+	insert into tbl_u_country values('CN103', 'CHINA');
+	insert into tbl_u_country values('CN104', 'JAPAN');
+	insert into tbl_u_country values('CN105', 'PHILIPPINES');
+	insert into tbl_u_country values('CN106', 'USA');
+
+tbl_s_product
+	
+	insert into tbl_s_product values('PRD1000001', 'PALA', 'CT101', '5', '100.00', "")	
+	insert into tbl_s_product values('PRD1000002', 'MARTILYO', 'CT101', '5', '200.00', "")
+	insert into tbl_s_product values('PRD1000003', 'MASO', 'CT101', '5', '300.00', "")
+	insert into tbl_s_product values('PRD1000004', 'SEMENTO', 'CT101', '5', '400.00', "")
+	insert into tbl_s_product values('PRD1000005', 'BALSIG', 'CT101', '5', '500.00', "")	
+
+tbl_u_category
+	
+	insert into tbl_u_category values('CT101', 'HEAVY');
+	insert into tbl_u_category values('CT102', 'LIGHT');
+	
+pg. 918..

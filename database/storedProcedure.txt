@@ -1,0 +1,60 @@
+create procedure viewCustomer()
+begin
+Select cx.username,
+	cx.customer_last_name,
+	cx.customer_first_name,
+	cx.customer_address,
+	ctry.country_name,
+	cx.mobile_number,
+	cx.phone_number,
+	cx.email_address 
+from tbl_s_customer cx,
+     tbl_s_systemuser sys,
+     tbl_u_country ctry
+
+where cx.username = sys.username and
+	cx.country_code = ctry.country_code;
+end
+
+
+
+///
+
+PRODUCT CART
+
+SELECT prod.product_description,
+	cat.category_description,
+	prod.quantity,
+	prod.price,
+	prod.image
+	
+from tbl_s_product prod,
+	tbl_u_category cat
+where prod.category_code = cat.category_code and
+	prod.product_code = '$productCode'
+
+
+///
+CURRENT CART
+
+SELECT  det.transaction_number,
+	prod.product_code, 
+	prod.product_description,
+	cat.category_description,
+	det.quantity,
+	det.subtotal,
+	sum(det.subtotal)
+
+from tbl_s_product prod,
+     tbl_u_category cat,
+     tbl_t_shop_detail det
+
+where prod.product_code = det.product_code and
+      cat.category_code = prod.category_code
+
+
+
+SELECT sum( det.subtotal ) 
+FROM tbl_s_product prod, tbl_u_category cat, tbl_t_shop_detail det
+WHERE prod.product_code = det.product_code
+AND cat.category_code = prod.category_code 

@@ -1,0 +1,436 @@
+body
+{
+	text-align: center;
+}
+
+table
+{
+	width: 650px;
+}
+
+#header
+{
+	height: 100px;
+	background-color: #FFFFFF;
+}
+
+#cell1
+{
+	background-color: #009933;
+	width: 20%;
+}
+
+#myLogo
+{	
+	width: 150px;
+	height: 100px;		
+}
+
+#cell2
+{
+	background-color: white;			
+}
+
+#logo
+{
+	height: 100px;
+	width: 500px;
+}
+
+#navigation
+{
+	height: 30px;
+	padding-left: 20px;
+	padding-top: 10px;	
+	color: black;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align: left;
+	font-weight: bold;
+	border: #000000 thin inset;
+	background-color: #009933;
+}
+
+a:visited
+{
+	color:#000099;
+}
+
+a
+{
+	color:#000099;
+}
+
+a:hover
+{
+	background-color: white;
+}
+
+#displayUser
+{
+	margin-left: 500px;
+}
+
+#menu
+{
+	width: 150px;
+	background-color: #FFFFFF;
+	height: 500px;
+	text-align: center;
+	vertical-align: top;
+	padding-top: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: #000000 thin inset;
+	background-color: #009933;
+}
+
+#tblMenu
+{
+	width: 130px;	
+	text-align: left;
+	border: #000000 thin outset;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+	background-color: white;
+}
+
+#content
+{	
+	border: #000000 thin inset;
+	background-color: #009933;
+	vertical-align: top;
+}
+
+#footer
+{
+	height: 50px;
+	background-color: white;
+	border: #000000 thin inset;	
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#frmContent
+{
+	width: 500px;
+	text-align: center;
+	padding: 10px;
+}
+
+#tblError
+{
+	width:460px;
+	text-align:left;
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+#btn
+{
+	font-family: Arial, Helvetica, sans-serif;
+	width: 70px;
+	height: 35px;
+	font-weight: bold;
+}
+
+#btn2
+{
+	font-family: Arial, Helvetica, sans-serif;
+	width: 115px;
+	height: 35px;
+	font-weight: bold;
+}
+
+#txt
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background-color: #FFFF99;
+}
+
+/*HOME PAGE*/
+#travel
+{
+	padding: 20px;
+	float: left;
+}
+
+#p1
+{
+	margin-left: 220px;
+	margin-right: 20px;
+	font-family: serif, sans-serif;
+	font-size: 14px;
+	
+}
+
+#p2
+{
+	margin-left: 20px;
+	margin-right: 20px;
+	font-family: serif, sans-serif;
+	font-size: 14px;
+	
+
+}
+
+#p3
+{
+	margin-left: 20px;
+	margin-right: 20px;
+	font-family: serif, sans-serif;
+	font-size: 14px;
+
+}
+
+#p4
+{
+	margin-left: 20px;
+	margin-right: 20px;
+	font-family: serif, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+
+}
+
+#h21
+{
+	font-family: serif, sans-serif;
+	color: blue;
+}
+
+/* --------- Vision/Mission Page ----------------*/
+
+/* -------- About Us Page --------------- */
+
+
+
+#pab
+{
+	margin-left: 30px;
+	font-size: 70px;
+	font-weight: bold;
+	font-family: serif, sans-serif;
+	font-style: italic;
+	color: white;
+}
+
+#pab2
+{
+	margin-left: 20px;
+	margin-right: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+
+}
+
+#pab3
+{
+	margin-left: 20px;
+	margin-right: 30px;
+	font-family: serif, sans-serif;
+
+}
+
+
+
+#aboutlogo
+{	
+	float: right;
+	margin-right: 40px;
+	height: 100px;
+}
+
+
+#aboutdiv1
+{
+	background-color: #009933;
+	width: 300px;
+	height: 100px;
+	float: left;
+	
+}
+
+#aboutdiv2
+{
+	background-color: white;
+	width: 500px;
+	height: 100px;		
+}
+
+/* -------- End of About Us page ---------- */
+
+#vh2
+{
+	margin-left: 20px;
+	margin-top: 20px;
+
+}
+
+#vp1
+{
+
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: justify;
+}
+
+#visionlogo
+{
+	float: bottom-center;
+	width: 300px;
+	height: 180px;
+
+
+}
+
+#missionlogo
+{
+	float: bottom-center;
+	width: 300px;
+	height: 180px;
+
+
+}
+
+/* --------- End of Vision/Mission Page ----------*/
+
+
+/*LOGIN FORM*/
+#tblLogin
+{
+	margin-top: 100px;
+	width: 300px;	
+	border: #000000 thin inset;	
+	background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+}
+
+/*REGISTER FORM*/
+#tblRegister
+{	
+	margin-top: 30px;
+	width:400px;	
+	border: #000000 thin inset;
+	text-align: left;
+	font-size: 14px;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color: white;	
+}
+
+/*REGISTRATION RESULT*/
+#tblResult
+{
+	text-align: left;
+	width: 400px;
+	font-size: 13px;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color: white;	
+
+}
+
+/*PRODUCT DIVISION*/
+#divProduct
+{	
+	width: 460px;
+	height: 450px;
+	overflow: scroll;
+	padding: 10px;
+	border:#000000 1px inset;
+	background-color: white;
+}
+
+
+/*CART DIVISION*/
+#tblNewCart
+{
+	width: 460px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background-color: white;
+}
+
+#tblViewCart
+{	
+	width: 460px;	
+}
+
+#tblPayment
+{	
+	width: 460px;
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background-color: white;
+}
+
+#tblResultPayment
+{
+	width: 460px;
+	text-align: left;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+
+#tblListOrder
+{
+	width: 1000px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#tblList
+{
+	width: 460px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: white;
+}
+
+/*PASSWORD CONTENT */
+
+#divPassword
+{	
+	margin-top: 30px;
+	width: 460px;
+	border:#000000 thin solid;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	background-color: white;
+}
+#tblPassword
+{	
+	width: 400px;
+	text-align: left; 
+}
+
+
+/*USER ROLES CONTEN*/
+#tblUser
+{
+	widows:460px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#divAdmin
+{	
+	width: 460px;
+	padding: 10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	text-align: left;
+}
+
+#tblAdmin
+{
+	width: 300px;
+	text-align: left;
+	
+}
